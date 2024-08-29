@@ -1,0 +1,73 @@
+Documentation 
+Nueral Networks. Matrix configuration
+
+inputs = [[ 1.0,  2.0,  3.0,  2.5],                 ---> 3X4
+          [ 2.0,  5.0, -1.0,  2.0],
+          [-1.5,  2.7,  3.3, -0.8]]
+
+
+weights = [[ 0.2,  0.8, -0.5,  1.0],                ---> 3X4          
+           [ 0.5, -0.91,  0.26, -0.5],
+           [-0.26, -0.27,  0.17,  0.87]]
+
+How to calculate the dot prodocut method of the matrix input and  the matrix wieght?
+•Step One: Checking the dimantions of both matrices. Needs to be N x M & M x x
+•Step Two(Optimal):Use the transpose method if needed. Swaps the colums with the rows in a matrix transforming it from 3x4 to 4x3
+
+np.array(wieght).T =  [[ 0.2 ,  0.5 , -0.26],       ---> 4x3
+                       [ 0.8 , -0.91, -0.27],
+                       [-0.5 ,  0.26,  0.17],
+                       [  1.  , -0.5 ,  0.87]]
+
+•Step Three: Compute the dot prodocut for each element in the new patrix (output)
+
+First Element of new Matrix (output):
+    1st Row of input        [ 1.0,  2.0,  3.0,  2.5] 
+    1st Column of weights   [ 0.2,  0.8, -0.5,  1.0]
+                                calculation:
+                                           (1.0 x 0.2) + (2.0 x 0.8) + (3.0 x -0.5) + ( 2.5 x 1.0) = 0.2 + 1.6 - 1.5 + 2.5 = 2.8
+
+                                output =[[ 2.8 ,   ,   ],
+                                         [     ,   ,   ],
+                                         [     ,   ,   ],
+                                         [     ,   ,   ]]
+
+Second Element of new Matrix (output):
+    1st Row of input        [1.0, 2.0, 3.0, 2.5]
+    2nd Column of wieghts   [0.5, -0.91, 0.26, -0.5]
+                                calculation:
+                                            (1.0 x 0.5) + (2.0 x -0.91) + (3.0 x -0.26) + ( 2.5 x -0.5) = 0.5 - 1.82 + 0.78 -1.25 = -1.79
+
+                                output =[[ 2.8 , -1.79  ,   ],
+                                         [     ,        ,   ],
+                                         [     ,        ,   ],
+                                         [     ,        ,   ]]
+
+Third Element of new Matrix (output):
+    1st Row of inputs       [1.0, 2.0, 3.0, 2.5]
+    3rd Column of wieghts   [-0.26, -0.27, 0.17, 0.87] 
+                                Calculation:
+                                           (1.0 x -0.26)+(2.0 x -0.27)+(3.0 x 0.17)+(2.5 x 0.87)= -0.26 -0.54 + 0.51 + 2.175 = 1.885
+
+                                output =[[ 2.8 , -1.79  , 1.885  ],
+                                         [     ,        ,        ],
+                                         [     ,        ,        ],
+                                         [     ,        ,        ]] 
+
+2.1 element equals 2nd row of inputs x 1st colums of wiegts, 
+2.2 element equals 2nd row of inputs x 2nd Column of weights, 
+2.3 element equals 2nd row of inputs x 3rd column of wieghts
+
+                                output =[[ 2.8   , -1.79  , 1.885  ],
+                                         [ 5.16  , -4.81  , -0.3   ],
+                                         [       ,        ,        ]]
+
+3.1 element equals 3nd row of inputs x 1st colums of wiegts, 
+3.2 element equals 3nd row of inputs x 2nd Column of weights, 
+3.3 element equals 3nd row of inputs x 3rd column of wieghts
+
+                                output =[[ 2.8   , -1.79  , 1.885  ],
+                                         [ 5.16  , -4.81  , -0.3   ],
+                                         [ -0.608, -1.949 , -0.474 ]]
+
+

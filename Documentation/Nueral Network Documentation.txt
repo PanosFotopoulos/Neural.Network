@@ -1,0 +1,29 @@
+Neural Networks in general works like a "river". As input (matrix) is given (photo, text, etc.) refers to the data that is fed into the network for processing.
+If we talk about one layer of neurones then we refer to neural net work and looks like 
+                
+                      ----> O ---->
+                input ----> O ----> output
+                      ----> O ---->
+
+If its multiple lauyers of neyrons we talk about deep nueral network
+
+How neuron works?
+First thing first. Lets identify and explain the most critical features.
+A. Input vector from data input, other neurones
+B. Weight of neuron
+C. Bias
+D. Activation Function
+
+Lets now deep dive,
+A. Input: Input is a number comming ether from data (eg A photo tranformed into a matrix) or a previus neuron in shape of vecor(x1, x2, x3, xn)
+B. Weight: Weight is a number that determines the criticality of each neuron and the effectivity on the next once (w1, w2, w3, wn).
+
+So the two information above when reaching a neuron have the form of a prodocut (z = x*w, linear)
+
+C. Bias: Bias is a very critical event that happening in nueral networks. Bias is a number that is added on the previus prodocut (z = x*w + b). 
+This actually ensure that the model dosent pass from the center of Cartesian coordinate system (for x = 0 if not bias is applied then z = 0*w => z = 0 with bias z = 0*w + 3 => z = 3) 
+and the model becomes more flexxible. 
+D. Activation Function: This functions transfrom the model into a non-linear model, allowing the network to learn and model more complex relationship in the data.
+Common activation functions include ReLU, Sigmoid, and Tanh.
+
+So the neuron (layer) input x = [x1, x2] * w = [w1, w2] + has the result z ( z = (xN*wN) + b) and then the Activation function gives the final layer output f(z)

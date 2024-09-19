@@ -44,3 +44,7 @@ value in the NxN window. That finally becomes the new value of that region
 |-----------|
 | 2 | 0 | 2 |
  -----------
+
+
+
+ 

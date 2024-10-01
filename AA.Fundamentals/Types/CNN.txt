@@ -87,4 +87,4 @@ An easy way to picture the process is
 
 input --> Image Data(X) 
 
-1st layer --> Conv2D for feature extractor + ReLU activation to learn non linear ++ Max pooling to reduce the dimensions
+1st layer --> Conv2D for feature extractor + ReLU activation to learn non linear ++ Max pooling to reduce the dimensions.

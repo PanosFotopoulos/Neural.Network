@@ -26,7 +26,7 @@ print("Length of y:", len(y))
 print("Type of y:", type(y))
 print("First element of y:", type(y[0])) 
 
-# Normalize the pixel values (X should already be a NumPy array)
+# Normalize the pixel values (X should already be a NumPy array).
 X = X / 255.0
 
 
